@@ -1,0 +1,43 @@
+<div>
+    <h1>Bienvenido {{user.username}}</h1>
+    <button class="btn  btn-primary mb-2" onclick="window.location.href='/logout'"> Deslogear </button>
+    <h2 class="formTitle">Ingrese nuevo producto</h2>
+    <form class="form" action="/produc" method="post" role="form">
+        <div class="col-sm-8">
+            <label class="form-label m-2" for="a">Nombre</label>
+            <input id="a" class="form-control m-2 " type="text" name="nombre" placeholder="ingrese el nombre">
+        </div>
+        <div class="col-sm-8">
+            <label class="form-label m-2"  for="b">Precio</label>
+            <input id="b" class="form-control m-2 " type="text" name="precio" placeholder="ingrese el precio">
+        </div>
+        <div class="col-sm-8">
+            <label class="form-label m-2"  for="c">URL</label>
+            <input id="c" class="form-control m-2 " type="text" name="url" placeholder="ingrese la url">
+        </div>
+        <div class="col-sm-8">
+            <input class="btn btn-primary m-3" value="Cargar Producto" type="submit">
+        </div>
+    </form>
+</div>
+    <table class="table table-info table-striped ">
+        <thead>
+            <tr>
+                <th scope="col"> Nombre </th>
+                <th scope="col"> Precio </th>
+                <th scope="col"> Imagen </th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each completeList}}
+                <tr>
+                    <td>{{nombre}}</td>
+                    <td>${{precio}}</td>
+                    <td>
+                        <img src= "{{url}}" width="100px" alt= "{{nombre}}">
+                    </td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
