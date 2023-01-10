@@ -9,7 +9,7 @@ app.use('/',routerLog)
 
 app.engine("handlebars",engine())
 app.set("view engine","handlebars")
-app.set("views","./views")
+app.set("views","src/views")
 
 
 const PORT = process.env.PORT || 8080;
